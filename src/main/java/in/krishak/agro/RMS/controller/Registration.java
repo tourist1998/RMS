@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,9 +26,9 @@ public class Registration {
         return new ResponseEntity<>(userInfo, HttpStatus.OK);
     }
 
-    @GetMapping("/sign-in")
+    @PostMapping("/sign-in")
     public ResponseEntity<UserInfo> signIn(@RequestBody UserInfo userInfo) throws Exception {
         userService.signIn(userInfo);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(userInfo, HttpStatus.OK);
     }
 }

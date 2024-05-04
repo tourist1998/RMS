@@ -2,6 +2,7 @@ package in.krishak.agro.RMS.models;
 
 import jakarta.persistence.*;
 import java.time.Instant;
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,6 +25,9 @@ public class User implements Cloneable {
 
     @Column(name = "name")
     private String name;
+
+    @Column(name = "external_id")
+    private String externalId;
 
     @Column(name = "phone_number")
     private String phoneNumber;
@@ -51,6 +55,11 @@ public class User implements Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new AssertionError();
         }
+    }
+
+    @PrePersist
+    public void setExternalId() {
+        this.externalId = UUID.randomUUID().toString();
     }
 
 }
