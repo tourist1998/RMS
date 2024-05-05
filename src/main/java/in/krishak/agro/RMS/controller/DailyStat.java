@@ -22,8 +22,7 @@ public class DailyStat {
 
     @GetMapping("/fetch")
     public ResponseEntity<PaginatedResponseDTO<DailyRecord>> fetchDailyStat(
-            @RequestHeader(name = "USER_EXTERNAL_ID") @NonNull String userExternalId,
-            @RequestBody UserStatRequestDTO userStatRequestDTO) {
+            @RequestHeader(name = "USER_EXTERNAL_ID") @NonNull String userExternalId) {
 
         PaginatedResponseDTO<DailyRecord> responseDTO = dailyStatService.fetchStatDetail(userExternalId);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
