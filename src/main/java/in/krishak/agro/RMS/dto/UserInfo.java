@@ -23,4 +23,6 @@ public class UserInfo {
 
     private String address;
 
+    private String externalId;
+
 }

@@ -13,6 +13,7 @@ public class UserMapper {
         userInfo.setStatus(user.getStatus());
         userInfo.setPhoneNumber(user.getPhoneNumber());
         userInfo.setAddress(user.getAddress());
+        userInfo.setExternalId(user.getExternalId());
 
         return userInfo;
     }
@@ -23,6 +24,8 @@ public class UserMapper {
         user.setStatus(userInfo.getStatus());
         user.setPhoneNumber(userInfo.getPhoneNumber());
         user.setAddress(userInfo.getAddress());
+        user.setExternalId(userInfo.getExternalId());
+
 
         return user;
     }
