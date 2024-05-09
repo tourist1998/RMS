@@ -1,6 +1,7 @@
 package in.krishak.agro.RMS.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.sql.Date;
 import java.sql.Timestamp;
 import lombok.Data;
 import lombok.Getter;
@@ -14,6 +15,8 @@ import lombok.Setter;
 public class UserDailyRecordDTO {
 
     private Long userId;
+
+    private Timestamp date;
 
     @JsonProperty("dry_bait")
     private Integer dryBait;

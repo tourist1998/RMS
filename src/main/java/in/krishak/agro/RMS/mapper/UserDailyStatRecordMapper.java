@@ -23,6 +23,7 @@ public class UserDailyStatRecordMapper {
         dto.setComment(entity.getComment());
         dto.setCreatedAt(entity.getCreatedAt());
         dto.setUpdatedAt(entity.getUpdatedAt());
+        dto.setDate(entity.getDate());
         return dto;
     }
 
@@ -42,6 +43,7 @@ public class UserDailyStatRecordMapper {
         entity.setComment(dto.getComment());
         entity.setCreatedAt(dto.getCreatedAt());
         entity.setUpdatedAt(dto.getUpdatedAt());
+        entity.setDate(dto.getDate());
         return entity;
     }
 }
